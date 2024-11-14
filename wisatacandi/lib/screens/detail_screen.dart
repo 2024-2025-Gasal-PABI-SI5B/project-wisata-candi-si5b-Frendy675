@@ -11,25 +11,52 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Stack(
-            children: [
+              //detail header
               //image utama
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    candi.imageAsset,
-                    width: double.infinity,
-                    height: 300,
-                    fit: BoxFit.cover,
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        candi.imageAsset,
+                        width: double.infinity,
+                        height: 300,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
+                  //Tombol back custom 
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple[100]?.withOpacity(0.8),
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        onPressed: (){},
+                        icon: const Icon(Icons.arrow_back),
+                        ),
+                    ),
+                  ),
+                ],
+              ),
+              //Detail info
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    //info atas
+                    //info tengah
+                    //info bawah
+                  ],
                 ),
               )
+              //info atas
             ],
-          )
-        ],
-      ),
+          ),
     );
   } 
 }
