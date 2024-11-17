@@ -14,14 +14,14 @@ class _ProfileScreen extends State<ProfileScreen> {
   String userName = 'frenn';
   int favoriteCandiCount= 0;
 
-  //TODO 5. Implementasi fungsi SignIn
+  //TODO: 5. Implementasi fungsi SignIn
   void signIn(){
     setState(() {
       isSignedIn = !isSignedIn;
     });
   }
 
-  //TODO 6. Implementasi fungsi SignOut 
+  //TODO: 6. Implementasi fungsi SignOut 
   void signOut(){
     setState(() {
       isSignedIn = !isSignedIn;
