@@ -14,10 +14,48 @@ class SigninScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
     //TODO: 2. Pasang AppBar
-    AppBar: AppBar(title: Text('Sign In'),),
+    AppBar: AppBar(title: const Text('Sign In'),),
     //TODO: 3. Pasang body
-    body: Center(),
+    body: Center( 
+      child: Form(
+        child: Column(
+          //TODO: 4. Atur mainAxisAlignment dan crossaxisalignment 
+          mainAxisAlignment: MainAxisAlignment,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            //TODO: 5. Pasang textformfield nama pengguna
+            TextFormField(
+              controller: _usernameController,
+              decoration: InputDecoration(
+                labelText: 'Nama Pengguna',
+                hintText: 'Masukkan nama pengguna',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            //TODO: 6. Pasang Textformfield kata sandi
+            const SizedBox(height: 20,),
+            TextFormField(
+              controller: _passwordController,
+              decoration: InputDecoration(
+                labelText: 'Kata Sandi',
+                hintText: 'Masukkan kata sandi',
+                border: const OutlineInputBorder(),
+                errorText: _errorText.isNotEmpty ? _errorText : null,
+                suffixIcon: IconButton(
+                  onPressed: (){},
+                  icon: Icon(
+                    _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                  ),
+                  ),
+              ),
+              obscureText: _obscurePassword,
+            ),
+            //TODO: 7. Pasanng elevatedButton sign in
+          ],
+      )),
+    ),
+    );
   } 
 }
